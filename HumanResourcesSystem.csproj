@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1A78F65-B476-4321-8C11-4B2D5C1744A3}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HumanResourcesSystem</RootNamespace>
+    <AssemblyName>HumanResourcesSystem</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Models\Employee.cs" />
+    <Compile Include="Models\Level.cs" />
+    <Compile Include="Models\Position.cs" />
+    <Compile Include="Models\Skill.cs" />
+    <Compile Include="Presenters\Common\Validation.cs" />
+    <Compile Include="Presenters\EmployeePresenter.cs" />
+    <Compile Include="Presenters\EmployeeSkillPresenter.cs" />
+    <Compile Include="Presenters\LevelPresenter.cs" />
+    <Compile Include="Presenters\MainPresenter.cs" />
+    <Compile Include="Presenters\PositionPresenter.cs" />
+    <Compile Include="Presenters\SkillPresenter.cs" />
+    <Compile Include="Repositories\Common\BaseRepository.cs" />
+    <Compile Include="Repositories\Contracts\ILevelRepository.cs" />
+    <Compile Include="Repositories\EmployeeRepository.cs" />
+    <Compile Include="Repositories\Contracts\IEmployeeRepository.cs" />
+    <Compile Include="Repositories\Contracts\IPositionRepository.cs" />
+    <Compile Include="Repositories\Contracts\ISkillRepository.cs" />
+    <Compile Include="Repositories\EmployeeSkillRepository.cs" />
+    <Compile Include="Repositories\LevelRepository.cs" />
+    <Compile Include="Repositories\PositionRepository.cs" />
+    <Compile Include="Repositories\SkillRepository.cs" />
+    <Compile Include="Models\EmployeeSkill.cs" />
+    <Compile Include="Repositories\Contracts\IEmployeeSkillRepository.cs" />
+    <Compile Include="Views\EmployeeSkillView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeSkillView.Designer.cs">
+      <DependentUpon>EmployeeSkillView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EmployeeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\EmployeeView.Designer.cs">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Contracts\IEmployeeView.cs" />
+    <Compile Include="Views\Contracts\IPositionView.cs" />
+    <Compile Include="Views\Contracts\IMainView.cs" />
+    <Compile Include="Views\Contracts\ISkillView.cs" />
+    <Compile Include="Views\Contracts\ILevelView.cs" />
+    <Compile Include="Views\Contracts\IEmployeeSkillView.cs" />
+    <Compile Include="Views\LevelView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\LevelView.Designer.cs">
+      <DependentUpon>LevelView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\PositionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\PositionView.Designer.cs">
+      <DependentUpon>PositionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SkillView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SkillView.Designer.cs">
+      <DependentUpon>SkillView.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\EmployeeSkillView.resx">
+      <DependentUpon>EmployeeSkillView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeeView.resx">
+      <DependentUpon>EmployeeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\LevelView.resx">
+      <DependentUpon>LevelView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\PositionView.resx">
+      <DependentUpon>PositionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SkillView.resx">
+      <DependentUpon>SkillView.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
